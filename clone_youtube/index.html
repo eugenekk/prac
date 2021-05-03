@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube_clone</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- <Header> -->
+    <header class="header">
+        <i class="fab fa-youtube"></i>
+        <span class="logo">YouTube</span>
+        <ul class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </ul>
+    </header>
+
+    <!-- video Player -->
+    <section class="video_area">
+        <iframe src="https://www.youtube.com/embed/67stn7Pu7s4?list=PLv2d7VI9OotQ1F92Jp9Ce7ovHEsuRQB3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <!-- video_info -->
+    <section class="video_desc">
+        <div class="hashtags">
+            <a href="#">#Music</a>
+            <a href="#">#Workout</a>
+            <a href="#">#Chilling</a>
+        </div>
+
+        <div class="video_title">
+            <span class="title">공부할 때 듣는 노래</span>
+            <button class="moreBtn"><i class="fas fa-caret-down"></i></button>
+        </div>
+
+        <div class="views">100만</div>
+
+        <!-- action -->
+        <ul class="icons">
+            <li class="upBtn"><i class="fas fa-thumbs-up"></i></li>
+            <li class="downBtn"><i class="fas fa-thumbs-down"></i></li>
+            <li class="shareBtn"><i class="fas fa-share"></i></li>
+            <li class="addBtn"><i class="fas fa-share"></i></li>
+            <li class="flagBtn"><i class="fas fa-flag"></i></li>
+        </ul>
+
+        <!-- channal description -->
+        <div class="channel">
+            <div class="metadata">
+                <img src="images/avatar.png" alt="avatar">
+                <div class="info">
+                    <span class="name">뮤마랖</span>
+                    <span class="subscribers">1M subscribers</span>
+                </div>
+            </div>
+        </div>
+        <button class="subscribe">subscribe</button>
+    </section>
+
+    <section class="upNext">
+        <span class="title">Up next</span>
+        <ul>
+            <li class="item">
+                <img src="images/thumbnail1.png" alt="1">
+                <div class="info">
+                    <span class="title">[Playlist]수채화처럼 온 몸에 따스히 번지는 나의 봄</span>
+                    <span class="name">떼껄룩</span>
+                    <span class="views">조회수 43만회</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+            <li class="item">
+                <img src="images/thumbnail2.png" alt="2">
+                <div class="info">
+                    <span class="title">[Playlist]학창시절 사이다 썰 푸는 곳</span>
+                    <span class="name">떼껄룩</span>
+                    <span class="views">조회수 403만회</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+            <li class="item">
+                <img src="images/thumbnail3.png" alt="3">
+                <div class="info">
+                    <span class="title">[Playlist]과제할때 들으면 교수님께 A+ 받는 팝송</span>
+                    <span class="name">떼껄룩</span>
+                    <span class="views">조회수 243만회</span>
+                </div>
+                <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

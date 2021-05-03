@@ -1,0 +1,75 @@
+header{
+    height : 500px;
+    background-image: url("images/main_gradient.jpg");
+    background-size: cover;
+}
+.nav{
+    display : flex;
+    height : 50px;
+    justify-content: space-between;
+}
+.menu{
+    display : flex;
+    justify-content: space-evenly;
+}  
+.menu a{
+    padding : 8px;
+    color : white;
+}
+.main_slogan{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top : 70px;
+}
+.main_slogan .main_text{
+    font-size : 70px;
+    color : white;
+    padding : 10px;
+}
+.main_slogan .sub_text{
+    font-size : 20px;
+    color : white;
+    padding : 10px;
+}
+.button_wrapper{
+    display: flex;
+    padding-top : 30px;
+}
+.buttons{
+    height : 40px;
+    border : 1px solid black;
+    border-radius : 20px;
+    padding : 10px;
+    margin : 10px;
+}
+
+article .title{
+    padding-top : 50px;
+    font-size : 50px;
+}
+.services_unit{
+    width:300px;
+}
+
+.circle_unit {
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    background-color: rgba(245, 223, 77);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.service_image{
+    width : 70px;
+
+}
+.service_name{
+    font-size : 20px;
+}
+
+.service_desc{
+    font-size : 14px;
+}
+
