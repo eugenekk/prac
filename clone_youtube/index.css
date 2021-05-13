@@ -1,58 +1,266 @@
-:root{
-    /* color  */
-    --white-color:#fff;
-    --black-color :#140a00;
-    --blue-color:#045fd4;
-    --red-color: #ff0000;
-    --grey-dark-color: #090909;
-    --grey-light-color: #e0e0e0;
+:root {
+  /* color  */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #090909;
+  --grey-light-color: #e0e0e0;
 
-    /* size  */
-    --padding : 12px;
-    --avatar-size : 36px;
+  /* size  */
+  --padding: 12px;
+  --avatar-size: 36px;
 
-    /* font-size  */
-    --font-large : 18px;
-    --font-medium : 14px;
-    --font-small : 12px;
-    --font-micro : 10px;
+  /* font-size  */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
 }
 
-*{
-    padding :0;
-    margin : 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Noto Sans KR', sans-serif;
-    /* font-family: 'Antonio', sans-serif; */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  /* font-family: 'Antonio', sans-serif; */
 }
-
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
 header {
-    display : flex;
-    justify-content: space-between;
-    padding : var(--padding);
-    background-color: var(--black-color);
-    color : var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--white-color);
+  color: var(--white-color);
 }
-
-header .logo{
-    font-family: 'Antonio', sans-serif;
-    font-size : var(--font-large)
+header .menuAndLogo {
+  flex: 1 1 20%;
+  display: flex;
+  align-items: center;
+}
+header .searchbox {
+  flex: 1 1 60%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+header .icons {
+  flex: 1 1 20%;
+}
+header .fa-bars {
+  color: var(--grey-dark-color);
+  margin: var(--padding);
+}
+header .youtube_logo {
+  margin: var(--padding);
 }
 header .fa-youtube {
-    font-size: var(--font-large);
-    color : var(--red-color);
+  font-size: var(--font-large);
+  color: var(--red-color);
+}
+header .logo {
+  font-family: "Antonio", sans-serif;
+  font-size: var(--font-large);
+  color: var(--black-color);
+}
+@media screen and (max-width: 500px) {
+  .searchbox .inputbox {
+    display: none;
+  }
+}
+header .searchbox .inputbox {
+  height: 30px;
+  border: 1px solid var(--grey-light-color);
+  width: 60%;
+}
+header .searchbox .search_icons {
+  display: flex;
+}
+header .searchbox .search_icons li {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-large);
+  color: var(--grey-dark-color);
+}
+header .fa-search,
+.fa-microphone {
+  color: var(--grey-dark-color);
+  margin: var(--padding);
+}
+header .icons {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding);
+  align-items: center;
 }
 
-header .icons .fa-search{
-    margin-right : var(--padding);
+header .icons li {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-large);
+  color: var(--grey-dark-color);
 }
-
+header .icons .emoji {
+  width: var(--avatar-size);
+  height: var(--avatar-size0);
+  border-radius: 50%;
+}
 /* video player */
-.video_area iframe{
-    width : 100%;
-    height : 100%;
-} 
+.video_area {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+.video_area iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
 
+.video_desc {
+  padding: var(--padding);
+}
+.video_desc .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+.video_desc .hashtags a {
+  margin-right: var(--padding);
+}
+.video_desc .video_title {
+  display: flex;
+}
+.video_desc .video_title .title {
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+.video_desc .video_title .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.video_desc .video_title .moreBtn {
+  height: 1000%;
+  transition: transform 300ms ease-in-out;
+}
+.video_desc .video_title .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+.video_desc .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/*<!-- action -->*/
+.video_desc .icons {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+.video_desc .icons li {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.video_desc .icon li .i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+.video_desc .icon li .i.active {
+  color: var(--blue-color);
+}
+
+/* channal description */
+.video_desc .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+.video_desc .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+.video_desc .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+.video_desc .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.video_desc .channel .metadata .info .name {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+}
+.video_desc .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.video_desc .channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+.upNext {
+  padding: 0 var(--padding);
+}
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+.upNext .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+.upNext .item .img img {
+  width: 100%;
+}
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+.upNext .item .moreBtn {
+  flex: 1 1 5%;
+}
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.descAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 900px) {
+  .descAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+}
