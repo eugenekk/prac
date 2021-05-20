@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>만족도/활용도 상세페이지</title>
+    <script defer src="./node_modules/chart.js/dist/chart.js"></script>
+    <script defer type="text/javascript" src="./chartMaker.js"></script>
+    <style>
+      .contents {
+        display: flex;
+        flex-direction: column;
+      }
+      .subtitle {
+        margin-bottom: 60px;
+      }
+      .graphWrapper {
+        display: flex;
+        justify-content: space-around;
+        height : 500px;
+      }
+
+      .chart-container {
+        padding: 10px;
+        height  : 100%;
+      }
+      .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      }
+      .styled-table thead tr {
+        background-color: #009879;
+        color: black;
+        text-align: left;
+      }
+      .styled-table th,
+      .styled-table td {
+        padding: 12px 15px;
+      }
+      .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+
+      .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+
+      .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+      }
+      .styled-table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //메뉴,키워드,파일업로드용 html import
+      //$(document).ready(function () {
+      //  $("#header").load("../html/menu.html", function () {
+      //    document.getElementById("board_btn").classList.add("active");
+      //    document.getElementById("sub_nav").classList.add("show");
+      //    document.getElementById("board_submenu").classList.add("show");
+      //    document
+      //      .getElementById("board_satis_search_btn")
+      //      .classList.add("active2");
+      //  });
+      //});
+    </script>
+  </body>
+
+  <header id="header"></header>
+  <article>
+    <meta charset="utf-8" />
+    <div class="contents">
+      <h1 class="subtitle" id="subtitle">IP조각 모음</h1>
+
+      <div class="graphWrapper">
+        <section>
+          <h2>광역본부별 만족도&활용도 그래프</h2>
+
+          <div class="chart-container">
+            <canvas id="test1" style="height:80%; width:50vw"></canvas>
+          </div>
+        </section>
+
+        <section>
+          <h2>직무별 만족도&활용도 그래프</h2>
+
+          <div class="chart-container">
+            <canvas id="test2" style="height:80%; width:100%"></canvas>
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <h2>광역본부별 & 직무별 만족도 상세 점수</h2>
+
+        <div class="chart-container">
+          <canvas id="test3" width="500" height="300"></canvas>
+        </div>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dom</td>
+              <td>6000</td>
+            </tr>
+            <tr class="active-row">
+              <td>Melissa</td>
+              <td>5150</td>
+            </tr>
+            <!-- and so on... -->
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>광역본부별 & 직무별 활용도 상세 점수</h2>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dom</td>
+              <td>6000</td>
+            </tr>
+            <tr class="active-row">
+              <td>Melissa</td>
+              <td>5150</td>
+            </tr>
+            <!-- and so on... -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </article>
+  <div class="scroll_top" id="scroll_top" onclick="scroll_to_top()"></div>
+  <div class="footer"></div>
+</html>
