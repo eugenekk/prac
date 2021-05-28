@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import axios from 'axios';
+import Movie from "./Movie";
+import "./App.css"
 //컴포넌트 추가 가능
 
 // class App is extended from React의 Component
@@ -16,20 +18,46 @@ class App extends React.Component{
     movies : []
   };
 
+  getMovies = async ()=>{
+    const {
+      data: {
+        data:{ movies }
+      }
+    } = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating")
+    console.log('movies', movies);
+    // movie 데이터 가져오면 state에 넣고, isLoading 값 false로 변경
+    this.setState({ movies, isLoading : false });
+  }
+
   // render 끝나고 바로 시행(2번)
   componentDidMount(){
-    setTimeout(()=>{
-      this.setState({isLoading : false});
-    }, 3000)
+    this.getMovies();
   }
   
   render(){
-    const {isLoading} = this.state;
+    const {isLoading, movies} = this.state;
     return (
-      <div>
-        {isLoading ? "Loading...": "We are ready!"}
-      </div>
-    )
+      <section class="container">
+        {isLoading ? (
+          <div class="loader">
+            <span class="loader__text">Loading...</span>
+          </div>
+        ) : (
+          <div class="movies">
+            {movies.map(movie => (
+            <Movie 
+              key={movie.id} 
+              id={movie.id} 
+              year={movie.year} 
+              title={movie.title} 
+              summary={movie.summary} 
+              poster={movie.medium_cover_image} 
+            />
+          ))}
+          </div>
+          )}
+      </section>
+    );
   }
 }
 export default App;
